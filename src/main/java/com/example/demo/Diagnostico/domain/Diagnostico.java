@@ -21,5 +21,4 @@ public class Diagnostico {
     @JoinColumn(name = "cita_id")
     private Cita cita;
 
-
 }
