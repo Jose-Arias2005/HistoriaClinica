@@ -1,6 +1,7 @@
 package com.example.demo.HistoriaClinica.domain;
 
 import com.example.demo.Cita.domain.Cita;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,7 @@ public class HistoriaClinica {
     private Date fechaCreacion;
 
     // Relación con Citas
+    @JsonIgnore
     @OneToMany(mappedBy = "historiaClinica")
     private List<Cita> citas;
 

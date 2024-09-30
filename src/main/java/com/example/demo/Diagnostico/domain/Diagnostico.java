@@ -1,6 +1,7 @@
 package com.example.demo.Diagnostico.domain;
 
 import com.example.demo.Cita.domain.Cita;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ public class Diagnostico {
 
     private String diagnostico;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "cita_id")
     private Cita cita;

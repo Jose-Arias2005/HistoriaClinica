@@ -2,6 +2,7 @@ package com.example.demo.Cita.domain;
 
 import com.example.demo.Diagnostico.domain.Diagnostico;
 import com.example.demo.HistoriaClinica.domain.HistoriaClinica;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +23,7 @@ public class Cita {
     private Time hora;
     private String especialidad;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "dni_paciente")
     private HistoriaClinica historiaClinica;
